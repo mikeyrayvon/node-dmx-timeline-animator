@@ -1,4 +1,4 @@
-# DMX Timeline Player
+# Node DMX Timeline Animator
 
 A Node.js command-line tool for playing DMX lighting timelines from JSON files.
 
