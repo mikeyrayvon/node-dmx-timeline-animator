@@ -79,7 +79,7 @@ The `channels` array represents DMX values (0-255) for each channel, starting fr
 
 ### Command Line Options
 
-Usage: node-dmx-timeline-animator [options]
+Usage: `node src/index.js [options]`
 
 Play DMX timelines from JSON files
 
