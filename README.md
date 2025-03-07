@@ -79,7 +79,11 @@ The `channels` array represents DMX values (0-255) for each channel, starting fr
 
 ### Command Line Options
 
-Usage: `node src/index.js [options]`
+Usage:
+
+```
+node src/index.js [options]
+```
 
 Play DMX timelines from JSON files
 
@@ -98,19 +102,27 @@ Options:
 
 ### Basic Usage
 
-`node src/index.js --device /dev/ttyUSB0 --timeline my-timeline.json --presets my-presets.json`
+```
+node src/index.js --device /dev/ttyUSB0 --timeline my-timeline.json --presets my-presets.json
+```
 
 ### Start from a Specific Time
 
-`node src/index.js --start 5.5`
+```
+node src/index.js --start 5.5
+```
 
 ### Loop the Timeline
 
-`node src/index.js --loop`
+```
+node src/index.js --loop
+```
 
 ### Loop with Pause Interval
 
-`node src/index.js --loop --interval 2`
+```
+node src/index.js --loop --interval 2
+```
 
 ## Finding the DMX device path
 
@@ -165,7 +177,9 @@ To make the script run automatically when the Raspberry Pi boots:
 
 1. Create a systemd service file:
 
-`sudo nano /etc/systemd/system/dmx-player.service`
+```
+sudo nano /etc/systemd/system/dmx-animator.service
+```
 
 2. Add the following content (adjust paths as needed):
 
@@ -188,8 +202,8 @@ WantedBy=multi-user.target
 3. Enable and start the service:
 
 ```
-sudo systemctl enable dmx-player.service
-sudo systemctl start dmx-player.service
+sudo systemctl enable dmx-animator.service
+sudo systemctl start dmx-animator.service
 ```
 
 ## Troubleshooting
@@ -198,11 +212,15 @@ sudo systemctl start dmx-player.service
 - Verify your JSON files are properly formatted
 - For permission issues with the USB device, you may need to add your user to the dialout group:
 
-`sudo usermod -a -G dialout $USER`
+```
+sudo usermod -a -G dialout $USER
+```
 
 - Check service logs if running as a systemd service:
 
-`sudo journalctl -u dmx-player.service`
+```
+sudo journalctl -u dmx-animator.service
+```
 
 ## Acknowledgements
 
