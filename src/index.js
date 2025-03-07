@@ -8,8 +8,7 @@ import { program } from "commander";
 
 // Setup CLI options
 program
-  .name("DMX Animator")
-  .usage("node src/index.js [options]")
+  .name("node src/index.js")
   .description("Play DMX timelines from JSON files")
   .version("1.0.0")
   .option("-t, --timeline <path>", "Path to timeline JSON file")
