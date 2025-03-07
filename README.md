@@ -35,6 +35,10 @@ npm install
 
 ### Timeline File (timeline.json)
 
+- `time` is the time in milliseconds when this state should be reached
+- `type` is a preset key, or `"custom"` when the `channels` are unique to the event
+- `channels` array represents DMX values (0-255) for each channel, starting from channel 1. For example, `[255, 0, 0, 0]` sets channel 1 to 255, channel 2 to 0, channel 3 to 0, and channel 4 to 0.
+
 ```
 {
     "events": [
@@ -57,8 +61,6 @@ npm install
     "duration": 15
 }
 ```
-
-The `channels` array represents DMX values (0-255) for each channel, starting from channel 1. For example, `[255, 0, 0, 0]` sets channel 1 to 255, channel 2 to 0, channel 3 to 0, and channel 4 to 0.
 
 ### Presets File (presets.json)
 
