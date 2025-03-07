@@ -121,7 +121,11 @@ To find the device path for your DMX interface, you'll need to follow different 
 1. Connect your Enttec USB DMX Pro interface to your computer
 2. Open Terminal
 3. Run this command to list all USB serial devices:
-   `ls /dev/tty.usbserial*`
+
+```
+ls /dev/tty.usbserial*
+```
+
 4. You should see something like `/dev/tty.usbserial-EN365093` (the exact ID will vary)
 
 ### On Linux (including Raspberry Pi):
@@ -129,7 +133,11 @@ To find the device path for your DMX interface, you'll need to follow different 
 1. Connect your Enttec USB DMX Pro interface
 2. Open Terminal
 3. Run this command to list USB devices:
-   `ls /dev/ttyUSB*`
+
+```
+ls /dev/ttyUSB*
+```
+
 4. You should see something like `/dev/ttyUSB0` or `/dev/ttyUSB1`
 
 ## Running on Raspberry Pi
