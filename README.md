@@ -26,8 +26,8 @@ DMX Timeline Player allows you to control DMX lighting fixtures according to pre
 ### Clone the Repository
 
 ```
-git clone https://github.com/yourusername/dmx-timeline-player.git
-cd dmx-timeline-player
+git clone https://github.com/mikeyrayvon/node-dmx-timeline-animator.git
+cd node-dmx-timeline-animator
 npm install
 ```
 
@@ -79,7 +79,7 @@ The `channels` array represents DMX values (0-255) for each channel, starting fr
 
 ### Command Line Options
 
-Usage: dmx-timeline-player [options]
+Usage: node-dmx-timeline-animator [options]
 
 Play DMX timelines from JSON files
 
@@ -95,19 +95,19 @@ Options:
 
 ### Basic Usage
 
-`dmx-timeline-player --device /dev/ttyUSB0 --timeline my-timeline.json --presets my-presets.json`
+`node src/index.js --device /dev/ttyUSB0 --timeline my-timeline.json --presets my-presets.json`
 
 ### Start from a Specific Time
 
-`dmx-timeline-player --start 5.5`
+`node src/index.js --start 5.5`
 
 ### Loop the Timeline
 
-`dmx-timeline-player --loop`
+`node src/index.js --loop`
 
 ### Loop with Pause Interval
 
-`dmx-timeline-player --loop --interval 2`
+`node src/index.js --loop --interval 2`
 
 ## Running on Raspberry Pi
 
@@ -123,8 +123,8 @@ sudo apt-get install -y nodejs
 2. Clone the repository:
 
 ```
-git clone https://github.com/yourusername/dmx-timeline-player.git
-cd dmx-timeline-player
+git clone https://github.com/mikeyrayvon/node-dmx-timeline-animator.git
+cd node-dmx-timeline-animator
 npm install
 ```
 
@@ -145,8 +145,8 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/node /home/pi/dmx-timeline-player/src/index.js --device /dev/ttyUSB0
-WorkingDirectory=/home/pi/dmx-timeline-player
+ExecStart=/usr/bin/node /home/pi/node-dmx-timeline-animator/src/index.js --device /dev/ttyUSB0
+WorkingDirectory=/home/pi/node-dmx-timeline-animator
 User=pi
 Restart=always
 
