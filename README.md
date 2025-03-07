@@ -84,6 +84,8 @@ Usage: node-dmx-timeline-animator [options]
 Play DMX timelines from JSON files
 
 Options:
+
+```
 -V, --version output the version number
 -t, --timeline <path> Path to timeline JSON file
 -p, --presets <path> Path to presets JSON file
@@ -92,6 +94,7 @@ Options:
 -l, --loop Loop the timeline (default: false)
 -i, --interval <minutes> Pause interval between loops in minutes (default: "0")
 -h, --help display help for command
+```
 
 ### Basic Usage
 
