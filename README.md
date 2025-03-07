@@ -173,6 +173,15 @@ sudo systemctl start dmx-player.service
 
 `sudo journalctl -u dmx-player.service`
 
+## Acknowledgements
+
+This project made possible by these technologies:
+
+- [dmx-ts](https://github.com/node-dmx/dmx-ts)
+- [Commander.js](https://github.com/tj/commander.js)
+- [Node.js](https://nodejs.org/)
+- [Enttec](https://www.enttec.com/)
+
 ## License
 
 MIT
