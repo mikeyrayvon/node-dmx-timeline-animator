@@ -248,8 +248,7 @@ async function main() {
     }
   };
 
-  // Allow graceful shutdown
-  process.on("SIGINT", () => {
+  function handleShutdown() {
     console.log("\nStopping animation...");
     if (currentAnimation) {
       currentAnimation.stop();
@@ -267,7 +266,12 @@ async function main() {
       console.log("Animation stopped");
       process.exit(0);
     }, 500);
-  });
+  }
+
+  // Handle various termination signals
+  process.on("SIGINT", handleShutdown); // Ctrl+C
+  process.on("SIGTERM", handleShutdown); // systemctl stop
+  process.on("SIGQUIT", handleShutdown); // Keyboard quit
 
   // Start the animation
   runAnimation();
