@@ -25,6 +25,11 @@ program
     "Pause interval between loops in minutes",
     "0"
   )
+  .option(
+    "-w, --wait <seconds>",
+    "Initial delay before starting the animation in seconds",
+    "0"
+  )
   .parse(process.argv);
 
 const options = program.opts();
@@ -41,6 +46,7 @@ const devicePath = options.device;
 const startTime = parseFloat(options.start);
 const shouldLoop = options.loop;
 const loopInterval = parseFloat(options.interval) * 60 * 1000; // Convert minutes to milliseconds
+const initialDelay = parseFloat(options.wait) * 1000; // Convert seconds to milliseconds
 
 // Utility functions
 async function loadFile(filePath) {
@@ -163,6 +169,9 @@ async function main() {
   if (loopInterval > 0) {
     console.log(`Loop interval: ${loopInterval}ms`);
   }
+  if (initialDelay > 0) {
+    console.log(`Initial delay: ${initialDelay / 1000}s`);
+  }
   console.log(`Loading timeline from: ${timelineFilePath}`);
   console.log(`Loading presets from: ${presetsFilePath}`);
 
@@ -274,7 +283,12 @@ async function main() {
   process.on("SIGQUIT", handleShutdown); // Keyboard quit
 
   // Start the animation
-  runAnimation();
+  if (initialDelay > 0) {
+    console.log(`Waiting ${initialDelay / 1000} seconds before starting...`);
+    setTimeout(runAnimation, initialDelay);
+  } else {
+    runAnimation();
+  }
 }
 
 // Run the main function
